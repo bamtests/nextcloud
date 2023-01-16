@@ -6,7 +6,7 @@ Contains different flavors of the latest Nextcloud images with added features. F
 The images themselves can be found [here on Docker Hub](https://hub.docker.com/r/bambam018/nextcloud)
 
 **Flavors:**
-- [nc-full-storjapp-amd64](/nc-apache-full-storjapp/)
+- [nc-full-storj-app-apache](/nc-apache-full-storjapp/)
   - Adds the required dependencies for all optional packages suggested by nextcloud to the official nextcloud base image.
   - Adds cron functionality via supervisor so no extra container is needed.
   - Adds and enables the Storj app so that it can be used as a main storage option if desired.
