@@ -1,0 +1,35 @@
+---
+version: '3'
+
+services:
+  db:
+    image: postgres:alpine
+    volumes:
+      - db:/var/lib/postgresql/data
+    env_file:
+      - db.env
+    restart: always
+
+  redis:
+    image: redis:alpine
+    restart: always
+
+  app:
+    image: bambam018/nextcloud:nc-full-storjapp-amd64
+    ports:
+      - 8080:80
+    volumes:
+      - nextcloud:/var/www/html
+    environment:
+      - POSTGRES_HOST=db
+      - REDIS_HOST=redis
+    env_file:
+      - db.env
+    depends_on:
+      - db
+      - redis
+    restart: always
+
+volumes:
+  db:
+  nextcloud:
