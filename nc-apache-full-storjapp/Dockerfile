@@ -49,8 +49,9 @@ RUN set -ex; \
     apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
     rm -rf /var/lib/apt/lists/*
 
-COPY storj-ffi.ini /usr/local/etc/php/conf.d/storj-ffi.ini
+RUN echo ffi.enable=true > /usr/local/etc/php/conf.d/ffi.ini
 
+COPY storj-ffi.ini /usr/local/etc/php/conf.d/storj-ffi.ini
 COPY storj.config.php /usr/src/nextcloud/config/storj.config.php
 
 # See here for possible updates storj app https://link.storjshare.io/raw/jvfizc37vgr5ohyxwreg7abnxxrq/nextcloud-app-assets/
