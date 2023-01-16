@@ -23,8 +23,6 @@ services:
     environment:
       - POSTGRES_HOST=db
       - REDIS_HOST=redis
-      - OBJECTSTORE_STORJ_ACCESS_GRANT=$OBJECTSTORE_STORJ_ACCESS_GRANT
-      - OBJECTSTORE_STORJ_BUCKET=$OBJECTSTORE_STORJ_BUCKET
     env_file:
       - db.env
     depends_on:
