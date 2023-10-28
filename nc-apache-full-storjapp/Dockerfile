@@ -51,15 +51,15 @@ RUN set -ex; \
 
 RUN echo ffi.enable=true > /usr/local/etc/php/conf.d/ffi.ini
 
-COPY storj-ffi.ini /usr/local/etc/php/conf.d/storj-ffi.ini
-COPY storj.config.php /usr/src/nextcloud/config/storj.config.php
+#COPY storj-ffi.ini /usr/local/etc/php/conf.d/storj-ffi.ini
+#COPY storj.config.php /usr/src/nextcloud/config/storj.config.php
 
 # See here for possible updates storj app https://link.storjshare.io/raw/jvfizc37vgr5ohyxwreg7abnxxrq/nextcloud-app-assets/
-RUN mkdir -p /usr/src/nextcloud/apps \
-    && cd /usr/src/nextcloud/apps \
-    && curl --output storj.tar.gz https://link.storjshare.io/raw/jvfizc37vgr5ohyxwreg7abnxxrq/nextcloud-app-assets/storj-v0.0.9.tar.gz \
-    && tar -x -f storj.tar.gz \
-    && rm storj.tar.gz
+#RUN mkdir -p /usr/src/nextcloud/apps \
+#    && cd /usr/src/nextcloud/apps \
+#    && curl --output storj.tar.gz https://link.storjshare.io/raw/jvfizc37vgr5ohyxwreg7abnxxrq/nextcloud-app-assets/storj-v0.0.9.tar.gz \
+#    && tar -x -f storj.tar.gz \
+#    && rm storj.tar.gz
 
 RUN mkdir -p \
     /var/log/supervisord \
